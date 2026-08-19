@@ -130,15 +130,18 @@ const typingElement = document.getElementById("typing");
 if (typingElement) {
 
     const words = [
-    "Full Stack Web Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Computer Programmer"
-];
+        "Full Stack Web Developer",
+        "Frontend Developer",
+        "Backend Developer",
+        "Computer Programmer"
+    ];
 
     let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    let charIndex = words[0].length;
+    let isDeleting = true;
+
+    // Show the primary professional title immediately.
+    typingElement.textContent = words[0];
 
     function typeEffect() {
 
@@ -150,7 +153,8 @@ if (typingElement) {
             charIndex++;
         }
 
-        typingElement.textContent = currentWord.substring(0, charIndex);
+        typingElement.textContent =
+            currentWord.substring(0, charIndex);
 
         let speed = isDeleting ? 60 : 100;
 
@@ -170,9 +174,9 @@ if (typingElement) {
         setTimeout(typeEffect, speed);
     }
 
-    typeEffect();
+    // Keep the primary title visible briefly before animation starts.
+    setTimeout(typeEffect, 1800);
 }
-
 /* =====================================================
    DARK / LIGHT MODE
 ===================================================== */
