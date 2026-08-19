@@ -130,11 +130,11 @@ const typingElement = document.getElementById("typing");
 if (typingElement) {
 
     const words = [
-        "Frontend Web Developer",
-        "Computer Science Student",
-        "Future Full Stack Software Engineer",
-        "Programmer"
-    ];
+    "Full Stack Web Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Computer Programmer"
+];
 
     let wordIndex = 0;
     let charIndex = 0;
