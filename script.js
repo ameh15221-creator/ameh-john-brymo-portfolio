@@ -251,65 +251,6 @@ window.addEventListener("scroll", revealSections);
 
 
 /* =====================================================
-   ANIMATED COUNTERS
-===================================================== */
-
-const counters = document.querySelectorAll(".counter");
-let counterStarted = false;
-
-function startCounters() {
-
-    if (counterStarted) return;
-
-    const statsSection = document.getElementById("stats");
-
-    if (!statsSection) return;
-
-    const sectionTop = statsSection.getBoundingClientRect().top;
-
-    if (sectionTop < window.innerHeight - 100) {
-
-        counterStarted = true;
-
-        counters.forEach(counter => {
-
-            const target = parseInt(counter.dataset.target);
-            let current = 0;
-
-            const increment = Math.max(1, Math.ceil(target / 100));
-
-            function updateCounter() {
-
-                current += increment;
-
-                if (current >= target) {
-
-                    counter.textContent = target;
-
-                } else {
-
-                    counter.textContent = current;
-
-                    requestAnimationFrame(updateCounter);
-
-                }
-
-            }
-
-            updateCounter();
-
-        });
-
-    }
-
-}
-
-// Run on page load
-startCounters();
-
-// Run while scrolling
-window.addEventListener("scroll", startCounters);
-/* =====================================================
    SCROLL TO TOP BUTTON
 ===================================================== */
 
