@@ -10,20 +10,26 @@
 ===================================================== */
 
 window.addEventListener("load", () => {
+
     const preloader = document.getElementById("preloader");
 
-    if (preloader) {
+    if (!preloader) return;
+
+    // Short loading delay
+    setTimeout(() => {
+
+        preloader.classList.add("hide");
+
+        // Remove preloader after fade-out
         setTimeout(() => {
-            preloader.classList.add("hide");
+            preloader.remove();
+        }, 400);
 
-            // Remove completely after animation
-            setTimeout(() => {
-                preloader.remove();
-            }, 600);
+    }, 300);
 
-        }, 1500);
-    }
 });
+
+
 
 /* =====================================================
    MOBILE MENU
